@@ -1,38 +1,28 @@
-const  Session  = require('../models/session.model');
-const  Seat  = require('../models/seat.model');
-const  Category  = require('../models/category.model');
-const  Movie  = require('../models/movie.model');
+const  {Session}  = require('../models/session.model');
+const  {Seat}  = require('../models/seat.model');
+const  {Category}  = require('../models/category.model');
+const  {Movie}  = require('../models/movie.model');
 module.exports.createSession = async function (request, response)  {
     try{
 
         const {sessionTime,sessionHall,Title,Duration,Description,MinAge,cat} = request.body
-        let zz =await Category.create({Name:cat})
+        let zz=await Category.findOne({Name:cat})
+        if(zz==null) 
+        zz=await Category.create({Name:cat})
         let sessionMovie=await Movie.create({Title,Duration,Description,MinAge,Category:zz})
         let zzyy= await Session.create({sessionTime,sessionHall,sessionMovie})
         let id=zzyy._id
-        
+       
         for(i =0,g=id; i < 80; i++)
         {
             console.log(g)
             let thisSeat= await Seat.create({id:i})
-            console.log(thisSeat)
             let zzxxx=await Session.findOneAndUpdate({_id:g},{$push:{sessionSeat: thisSeat}})
         }
-        
-     
-        
-        response.json(zzyy)
-
-        
+        response.json(zzyy)  
     }catch{
         return "error";
     }
-    // Hall.create({
-    //     Name,
-    //     Slots
-    // })
-    //     .then(project => response.json(project))
-    //         .catch(err => response.status(400).json(err))
     
 }
 module.exports.getAllSession = (request, response) => {

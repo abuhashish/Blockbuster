@@ -1,5 +1,5 @@
-const  User   = require('../models/user.model');
-const  Seat  = require('../models/seat.model');
+const  {User}   = require('../models/user.model');
+const  {Seat}  = require('../models/seat.model');
 
 
 module.exports.createUser = (request, response) => {
