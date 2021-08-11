@@ -8,7 +8,7 @@ const MovieSchema = new mongoose.Schema({
     Duration:{type:String, required:true},
     Description:{type:String,required:true},
     MinAge:{type:Number, required:true},
-    Category:[CategorySchema] 
+    Category: CategorySchema 
 })
 
 const UserSchema = new mongoose.Schema({
@@ -36,39 +36,30 @@ const UserSchema = new mongoose.Schema({
         ],
         minlength:[8,'password length must be 8 or greater.']
     },
-    Movie: [MovieSchema],
     Role: { type:Number, default:0},
-    Category:[CategorySchema],
 }, { timestamps: true });
 const SeatSchema = new mongoose.Schema({
     id:{
         type:Number,
     },
-    isTaken:[
-        {type:Boolean,default:false}
-    ],
+    isTaken:
+        {type:Boolean,default:false}, 
+    User:UserSchema,
 
 })
-const TimeSchema = new mongoose.Schema({
-    Slots:{type:String},
-    Movie:MovieSchema,
+const SessionSchema = new mongoose.Schema({
+    sessionTime:{type:String },
+    sessionHall:{type:String},
+    sessionMovie:MovieSchema,
+    sessionSeat:[SeatSchema]
+})
 
-})
-const HallSchema = new mongoose.Schema({
-    Name:{
-        type:String,
-    },
-    Seat:[SeatSchema],
-    Slots:[TimeSchema]
-    
-})
 
 
 
 UserSchema.plugin(uniqueValidator)
 module.exports.User = mongoose.model('User', UserSchema);
 module.exports.Movie = mongoose.model('Movie', MovieSchema);
-module.exports.Hall = mongoose.model('Hall', HallSchema);
 module.exports.Seat = mongoose.model('Seat', SeatSchema);
+module.exports.Session = mongoose.model('Session', SessionSchema);
 module.exports.Category = mongoose.model('Category', CategorySchema);
-module.exports.Time= mongoose.model('Time', TimeSchema);

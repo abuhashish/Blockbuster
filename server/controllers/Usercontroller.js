@@ -1,4 +1,4 @@
-const { User } = require('../models/models');
+const { User , Hall ,Time, Seat } = require('../models/models');
 
 module.exports.createUser = (request, response) => {
     const { Username, Email,Password } = request.body;
@@ -30,3 +30,10 @@ module.exports.deleteUser = (request, response) => {
         .then(deleteConfirmation => response.json(deleteConfirmation))
         .catch(err => response.json(err))
 }
+// module.exports.addSeat=async function (request, response) => {
+//    const myuser = await User.findOne({_id:request.params.user})
+//    const myhall=await Hall.findOne({_id:request.params.hall})
+//    const mytime=await Time.findOne({_id:request.params.time})
+   
+//    const {cat}=request.body;
+// }
