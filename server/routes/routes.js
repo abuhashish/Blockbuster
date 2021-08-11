@@ -15,6 +15,8 @@ module.exports = function(app){
     app.get('/api/user/:id', UserController.getUser);
     app.put('/api/user/:id',UserController.updateUser);
     app.delete('/api/user/:id',UserController.deleteUser);
+    app.post('api/register/', UserController.register);
+
     //session
     app.post('/api/Session', Sessioncontroller.createSession);
     app.get('/api/Sessions', Sessioncontroller.getAllSession);

@@ -1,5 +1,7 @@
-const { Session,Category,Movie,Seat } = require('../models/models');
-
+const  Session  = require('../models/session.model');
+const  Seat  = require('../models/seat.model');
+const  Category  = require('../models/category.model');
+const  Movie  = require('../models/movie.model');
 module.exports.createSession = async function (request, response)  {
     try{
 
@@ -8,7 +10,6 @@ module.exports.createSession = async function (request, response)  {
         let sessionMovie=await Movie.create({Title,Duration,Description,MinAge,Category:zz})
         let zzyy= await Session.create({sessionTime,sessionHall,sessionMovie})
         let id=zzyy._id
- 
         
         for(i =0,g=id; i < 80; i++)
         {

@@ -1,5 +1,5 @@
-const { Movie } = require('../models/models');
-const { Category } = require('../models/models');
+const  Movie  = require('../models/movie.model');
+const  Category  = require('../models/category.model');
 module.exports.createMovie = (request, response) => {
     Movie.create(
         request.body
