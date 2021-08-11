@@ -14,6 +14,5 @@ const SeatSchema = new mongoose.Schema({
     User:{type : UserSchema},
 
 })
-
-module.exports.Seat = mongoose.model('Seat', SeatSchema);
 module.exports.SeatSchema=SeatSchema;
+module.exports.Seat = mongoose.model('Seat', SeatSchema);

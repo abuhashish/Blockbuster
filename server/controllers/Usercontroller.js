@@ -1,8 +1,9 @@
-const  User   = require('../models/user.model');
-const  Seat  = require('../models/seat.model');
 const passport = require('passport');
 const passportConfig = require('../passport');
 const JWT = require('jsonwebtoken');
+const  {User}   = require('../models/user.model');
+const  {Seat}  = require('../models/seat.model');
+
 
 const signToken = userID => {
     return JTW.sign({
