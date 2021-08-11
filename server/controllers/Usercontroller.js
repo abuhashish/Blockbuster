@@ -1,6 +1,15 @@
 const  User   = require('../models/user.model');
 const  Seat  = require('../models/seat.model');
+const passport = require('passport');
+const passportConfig = require('../passport');
+const JWT = require('jsonwebtoken');
 
+const signToken = userID => {
+    return JTW.sign({
+        iss : "Adel",
+        sub : userId
+    }, "Adel", {expiresIn : "1h"});
+}
 
 module.exports.createUser = (request, response) => {
     const { Username, Email,Password } = request.body;
