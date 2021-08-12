@@ -25,7 +25,4 @@ module.exports = function(app){
     app.get('/api/Session/:id', Sessioncontroller.getSession);
     app.put('/api/Session/:id',Sessioncontroller.updateSession);
     app.delete('/api/Session/:id',Sessioncontroller.deleteSession);
-
-
-
 }
