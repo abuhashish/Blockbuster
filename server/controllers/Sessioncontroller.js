@@ -12,7 +12,6 @@ module.exports.createSession = async function (request, response)  {
         let sessionMovie=await Movie.create({Title,Duration,Description,MinAge,Category:zz})
         let zzyy= await Session.create({sessionTime,sessionHall,sessionMovie})
         let id=zzyy._id
-       
         for(i =0,g=id; i < 80; i++)
         {
             console.log(g)

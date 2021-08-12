@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const MovieSchema = require('./movie.model')
+// import SeatSchema from './seat.model'
 const SeatSchema = require('./seat.model')
 // const SeatSchema = require('./seat.model')
 
@@ -10,7 +11,7 @@ const SessionSchema = new mongoose.Schema({
     sessionTime:{type:String },
     sessionHall:{type:String},
     sessionMovie:{type: MovieSchema},
-    sessionSeat:{type: SeatSchema},
+    sessionSeat:[{type: mongoose.SchemaTypes.ObjectId, ref:'eat'}],
 });
 
 // UserSchema.plugin(uniqueValidator)
