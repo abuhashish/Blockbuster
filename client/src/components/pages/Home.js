@@ -1,10 +1,12 @@
 import React from 'react';
 import '../../App.css';
-
+import MovieList from '../MovieList'
+import MoviePhoto from './MoviePhoto/MoviePhoto'
 export default function Home() {
   return (
-    <>
-      <h1 className='home'>EPIC</h1>
-    </>
+    <div  className='home'>
+      <MoviePhoto/>
+      <MovieList/> 
+    </div>
   );
 }
