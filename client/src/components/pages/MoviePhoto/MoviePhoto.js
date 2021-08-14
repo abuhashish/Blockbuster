@@ -12,27 +12,27 @@ const MoviePhoto = () => {
         },
         kkk:{
             textAlign:"Left",
-            width:"500px",
-            height:"10cm",
-            margin:"auto auto auto 10%",
-            padding:"auto auto auto auto",
-            backgroundColor:"rgba(255, 0, 0, 0.4)",
+            width:"550px",
+            height:"15cm",
+            padding:"2cm",
+            backgroundColor:"rgba(0, 0, 0, 0.63)",
         },
         box:{
+            margin:"0.5cm",
             width:"100px",
             border:"1px solid black",
-            backgroundColor:"rgba(255, 0, 0, 0.4)",
+            backgroundColor:"rgba(255, 0, 0)",
+            textAlign:"center"
         }
     }
     return (
         <div style={style.back}>
             <header class="jss211" style={style.kkk}>
-            <br/>
             <h1 class="MuiTypography-root jss213 MuiTypography-h1 MuiTypography-colorInherit">watchmen</h1>
             <p class="MuiTypography-root jss217 MuiTypography-body1 MuiTypography-colorInherit">set in an alternate history where “superheroes” are treated as outlaws, “watchmen” embraces the nostalgia of the original groundbreaking graphic novel while attempting to break new ground of its own.</p>
             <h4 class="MuiTypography-root jss214 MuiTypography-h4 MuiTypography-colorInherit">By: damon lindelof</h4>
             <p style={style.box} class="MuiTypography-root jss215 MuiTypography-body1 MuiTypography-colorInherit">60 min</p>
-            <p class="MuiTypography-root jss216 MuiTypography-body1 MuiTypography-colorInherit">drama</p>
+            <p style={style.box} class="MuiTypography-root jss216 MuiTypography-body1 MuiTypography-colorInherit">drama</p>
             </header>
         </div>
     )

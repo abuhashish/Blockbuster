@@ -11,8 +11,10 @@ import Typography from '@material-ui/core/Typography';
 const kkk="https://www.somagnews.com/wp-content/uploads/2021/06/Shazam-2-2.jpg"
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
-    margin:"3cm auto 3cm auto"
+    maxWidth: 500,
+    margin:"10px auto auto auto",
+    backgroundColor:"rgba(255, 0, 0, 0.3)",
+    color:"white"
   },
   media: {
     height: 140,
